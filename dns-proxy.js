@@ -9,6 +9,7 @@ const wildcard = require('wildcard2')
 const util = require('./util.js')
 
 const defaults = {
+  config:"./config/dns_proxy.json",
   port: 53,
   host: '127.0.0.1',
   logging: 'dnsproxy:query,dnsproxy:info',
@@ -43,6 +44,7 @@ const logerror = require('debug')('dnsproxy:error')
 
 if (config.reload_config === true) {
   var configFile = config.config
+  loginfo("Watching :" + configFile)
   fs.watchFile(configFile, function (curr, prev) {
     loginfo('config file changed, reloading config options')
     try {
