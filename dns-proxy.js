@@ -18,7 +18,8 @@ const defaults = {
   ],
   servers: {},
   domains: {
-    'dev': '127.0.0.1'
+    'dev': '127.0.0.1',
+    'ipsum': '127.0.0.1',
   },
   hosts: {
     'devlocal': '127.0.0.1'
